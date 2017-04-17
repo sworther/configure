@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: task
+# key: task
+# --
+|            | Monday | Tuesday | Wend | Thursday | Friday | Saturday | Sunday |
+|------------+--------+---------+------+----------+--------+----------+--------|
+| 40-foam    |     40 |         |      |          |        |          |        |
+| 20-alg     |     20 |         |      |          |        |          |        |
+| 10-reading |     10 |         |      |          |        |          |        |
+| 10-math    |     10 |         |      |          |        |          |        |
+| 10-wake up |     10 |         |      |          |        |          |        |
+| 10-sleep   |     10 |         |      |          |        |          |        |
+| sum-up     |        |         |      |          |        |          |        |
