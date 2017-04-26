@@ -7,8 +7,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-#ZSH_THEME="ys"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="ys"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -52,7 +52,7 @@ export UPDATE_ZSH_DAYS=7
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(archlinux colorize git tmux jump  autojump)
+plugins=(x archlinux colorize git tmux jump  autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -92,6 +92,12 @@ alias em="emacsclient -t"
 alias emc="emacsclient -c"
 alias ever="nohup emacs --daemon>/dev/null 2>&1 &"
 alias fran="nohup franz>/dev/null 2>&1 &"
+alias pandoc-reveal-self-contained="pandoc -t revealjs --self-contained -s" 
+alias pandoc-reveal="pandoc -t revealjs -s" 
+alias xdg="xdg-open"
+
+
+
 
 export TERM=xterm-256color
 alias please="sudo pacman -Syu"
@@ -110,25 +116,33 @@ alias mc=mocp
 alias cap="setxkbmap -option 'ctrl:nocaps'"
 alias pad=mousepad
 alias silence="sudo rmmod pcspkr"
+alias anaconda="source /opt/anaconda/bin/activate"
+alias deanaconda="source /opt/anaconda/bin/deactivate"
+#source /opt/anaconda/bin/activate
 
 export github="https://github.com/sworther"
 export oschina="https://git.oschina.net/sworther"
 export VISUAL='vim'
 #source /opt/openfoam4/etc/bashrc
-source /opt/OpenFOAM/OpenFOAM-4.x/etc/bashrc
+#source /opt/OpenFOAM/OpenFOAM-4.x/etc/bashrc
 export CLASSPATH=$CLASSPATH:~/algs4/algs4.jar
 setxkbmap -option 'ctrl:nocaps'
 
+# pyenv configure 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+
+#export PATH=$PATH:/opt/mgiza/bin
+export PATH=$PATH:/opt/giza-pp/bin
+#export PATH=~/.cabal/bin:$PATH
+
 # tmux config
 #set -g default-terminal $ZSH_TMUX_TERM
 #source $HOME/.tmux.conf
 
-#export PATH=~/.cabal/bin:$PATH
 #
 #my zsh configure
 bindkey -e
