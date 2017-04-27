@@ -1,3 +1,4 @@
+# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -93,15 +94,13 @@ alias ever="nohup emacs --daemon>/dev/null 2>&1 &"
 alias fran="nohup franz>/dev/null 2>&1 &"
 alias xdg="xdg-open"
 
+
 #pandoc configure for shortcut
 alias pandoc-reveal-self-contained="pandoc -t revealjs --self-contained -s" 
 alias pandoc-reveal="pandoc -t revealjs -s"
 alias pandoc-Kaiti="pandoc --latex-engine=xelatex -V CJKmainfont='STKaiti'" 
 alias pandoc-wqy-mono="pandoc --latex-engine=xelatex -V CJKmainfont='WenQuanYi Zen Hei Mono'"
-alias pandoc-simSun="pandoc --latex-engine=xelatex -V CJKmainfont='SimSun'"
-
-
-pandoc --latex-engine=xelatex -V CJKmainfont='WenQuanYi Zen Hei Mono' 
+alias pandoc-SimSun="pandoc --latex-engine=xelatex -V CJKmainfont='SimSun'"
 
 
 export TERM=xterm-256color
