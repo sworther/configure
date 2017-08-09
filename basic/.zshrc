@@ -52,7 +52,7 @@ export UPDATE_ZSH_DAYS=7
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(x archlinux colorize git tmux jump  autojump)
+plugins=(archlinux thefuck colorize  extract git tmux jump z zsh-navigation-tools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,13 +86,14 @@ export ARCHFLAGS="-arch x86_64"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias hpcssh="ssh -l zhaowenqiang 202.117.54.133"
-
 alias xx=xelatex
 alias em="emacsclient -t"
+alias nv="nvim"
 alias emc="emacsclient -c"
 alias ever="nohup emacs --daemon>/dev/null 2>&1 &"
 alias fran="nohup franz>/dev/null 2>&1 &"
 alias xdg="xdg-open"
+alias tmux2="systemd-run --scope --user tmux"
 
 
 #pandoc configure for shortcut
@@ -105,6 +106,7 @@ alias pandoc-SimSun="pandoc --latex-engine=xelatex -V CJKmainfont='SimSun'"
 
 export TERM=xterm-256color
 alias please="sudo pacman -Syu"
+unalias gm
 
 alias -s pdf=zathura
 alias -s txt=vim
@@ -115,7 +117,7 @@ alias -s pdf=zathura
 alias -s o=objdump
 alias gccp="gcc -pthread"
 alias clangp="clang -pthread"
-alias mc=mocp
+#alias mc=mocp
 
 alias cap="setxkbmap -option 'ctrl:nocaps'"
 alias pad=mousepad
@@ -127,8 +129,11 @@ alias deanaconda="source /opt/anaconda/bin/deactivate"
 export github="https://github.com/sworther"
 export oschina="https://git.oschina.net/sworther"
 export VISUAL='vim'
+
+# openfoam
 #source /opt/openfoam4/etc/bashrc
-#source /opt/OpenFOAM/OpenFOAM-4.x/etc/bashrc
+source /opt/OpenFOAM/OpenFOAM-4.1/etc/bashrc
+
 export CLASSPATH=$CLASSPATH:~/algs4/algs4.jar
 setxkbmap -option 'ctrl:nocaps'
 
@@ -150,7 +155,19 @@ export PATH=$PATH:/opt/giza-pp/bin
 #
 #my zsh configure
 bindkey -e
+source ~/.fzf/key-bindings.zsh
+source ~/.fzf/completion.zsh
+export PATH=$PATH:/home/i3/.gem/ruby/2.4.0/bin
 
-#eval $(thefuck --alias)
-# You can use whatever you want as an alias, like for Mondays:
-#eval $(thefuck --alias FUCK)
+
+export lantern=127.0.0.1:35259
+#exec fish
+
+# If not running interactively, do not do anything
+#[[ $- != *i* ]] && return
+#[[ -z "$TMUX" ]] && exec tmux
+
+# plugin specific
+set _Z_NO_RESOLVE_SYMLINKS
+
+
